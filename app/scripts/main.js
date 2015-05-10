@@ -1,7 +1,6 @@
-'use strict';
+/** @jsx React.DOM */
 
-(function($) {
-  $(document).ready(function() {
-    // Add your jQuery code here
-  });
-})(jQuery);
+(function() {
+  'use strict';
+
+})();
