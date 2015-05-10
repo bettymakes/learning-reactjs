@@ -11,8 +11,8 @@ var Hello = React.createClass({
   }
 });
 
-console.log(React);
 // Rendering Hello component onto the DOM
+// Note to self: reactComponent function deprecated, is now render
 React.render(
   <Hello location="World" />, 
   document.body
