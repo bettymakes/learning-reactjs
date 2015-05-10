@@ -61,16 +61,37 @@ var Post = React.createClass({
         <p>{this.props.content.article}</p>
         <hr />
         <h4>Votes</h4>
-        <ul>
-          <Comment votes={this.props.content.comments[0]} />
-          <Comment votes={this.props.content.comments[1]} />                
-          <Comment votes={this.props.content.comments[2]} />             
-          <Comment votes={this.props.content.comments[3]} />              
+        <ul>        
+          {this.props.content.comments.map(function (comment){
+            return <Comment votes={comment} />
+          })}            
         </ul>
       </article>
     );
   }
 });
+/*
+  Refactored!
+  Instead of hardcoding the comment section like this ..
+
+  <li>
+    <Comments votes={this.props.content.comments[0]} />
+  </li>
+  <li>
+    <Comments votes={this.props.content.comments[1]} />
+  </li>
+  <li>
+    <Comments votes={this.props.content.comments[2]} />
+  </li>
+  <li>
+    <Comments votes={this.props.content.comments[3]} />
+  </li>
+
+  ... where Post always expects 4 comments, we can call function within the
+  component templates. Using a .map function instead because it's more flexible.
+  What if there's less than 4 comments? What if there are more?
+*/
+
 
 React.render(
   <Post content={blogPost} />, document.getElementById('nesting-2')
