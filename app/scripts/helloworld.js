@@ -1,5 +1,11 @@
 /** @jsx React.DOM */
 
+var options = {
+  everyone: "World",
+  homeland: "Canada",
+  mother: "Mom"
+}
+
 // Creating a component called Hello
 var Hello = React.createClass({
 
@@ -13,7 +19,10 @@ var Hello = React.createClass({
 
 // Rendering Hello component onto the DOM
 // Note to self: reactComponent function deprecated, is now render
+
 React.render(
-  <Hello location="World" />, 
+
+  // <Hello location="Hello" />, 
+  <Hello location={options.everyone} />,
   document.body
 );
